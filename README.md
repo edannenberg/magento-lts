@@ -26,8 +26,8 @@ Each Magento Minor Version release will get its own branch that will be independ
 ## Installation
 This allows you to define your version dependencies safely in composer.json:
 
-```
-"openmage/magento-lts": "1.9.1.*"
+```json
+"openmage/magento-lts": "1.9.2.1-dev"
 ```
 
 
