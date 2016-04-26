@@ -2217,7 +2217,7 @@ class Mage_Sales_Model_Order extends Mage_Sales_Model_Abstract
             }
 
             $shippingAddress = $this->getShippingAddress();
-            if ($shippingAddress && $this->getShippigAddressId() != $shippingAddress->getId()) {
+            if ($shippingAddress && $this->getShippingAddressId() != $shippingAddress->getId()) {
                 $this->setShippingAddressId($shippingAddress->getId());
                 $attributesForSave[] = 'shipping_address_id';
             }
