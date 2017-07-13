@@ -434,6 +434,7 @@
                 <domain_policy_frontend>2</domain_policy_frontend>
                 <extensions_compatibility_mode>1</extensions_compatibility_mode>
                 <secure_system_configuration_save_disabled>0</secure_system_configuration_save_disabled>
+                <session_cookie_lifetime>10800</session_cookie_lifetime>
             </security>
         </admin>
         <general>
