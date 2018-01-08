@@ -177,13 +177,14 @@ class Mage_Bundle_Block_Adminhtml_Sales_Order_Items_Renderer extends Mage_Adminh
         return $result;
     }
 
+    /**
+     * Retrieve Order Item
+     *
+     * @return Mage_Sales_Model_Order_Item
+     */
     public function getOrderItem()
     {
-        if ($this->getItem() instanceof Mage_Sales_Order_Item) {
-            return $this->getItem();
-        } else {
-            return $this->getItem()->getOrderItem();
-        }
+        return $this->getItem()->getOrderItem();
     }
 
     public function getValueHtml($item)
