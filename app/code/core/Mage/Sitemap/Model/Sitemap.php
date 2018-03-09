@@ -221,6 +221,13 @@ class Mage_Sitemap_Model_Sitemap extends Mage_Core_Model_Abstract
         }
         unset($collection);
 
+        Mage::dispatchEvent('sitemap_urlset_generating_before', array(
+            'file'      => $io ,
+            'base_url'  => $baseUrl ,
+            'date'      => $date,
+            'store_id'  => $storeId
+        ));
+
         $io->streamWrite('</urlset>');
         $io->streamClose();
 
