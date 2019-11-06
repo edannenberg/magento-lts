@@ -830,7 +830,16 @@ class Mage_Sales_Model_Quote extends Mage_Core_Model_Abstract
      */
     public function getItemById($itemId)
     {
-        return $this->getItemsCollection()->getItemById($itemId);
+        $quoteItem = $this->getItemsCollection()->getItemById($itemId);
+        if (!$quoteItem) {
+            foreach ($this->getItemsCollection() as $item) {
+                if ($item->getId() == $itemId) {
+                    $quoteItem = $item;
+                    break;
+                }
+            }
+        }
+        return $quoteItem;
     }
 
     /**
