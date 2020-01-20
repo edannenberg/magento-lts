@@ -1184,6 +1184,17 @@ class Mage_Core_Model_App
     }
 
     /**
+     * Test cache record availability
+     *
+     * @param   string $id
+     * @return  false|int
+     */
+    public function testCache($id)
+    {
+        return $this->_cache->test($id);
+    }
+
+    /**
      * Remove cache
      *
      * @param   string $id
