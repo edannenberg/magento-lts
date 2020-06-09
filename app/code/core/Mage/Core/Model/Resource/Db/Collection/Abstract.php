@@ -316,8 +316,7 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
             foreach ($field as $key => $value) {
                 $this->addFieldToSelect(
                     $value,
-                    (is_string($key) ? $key : null),
-                    false
+                    (is_string($key) ? $key : null)
                 );
             }
 
@@ -518,7 +517,7 @@ abstract class Mage_Core_Model_Resource_Db_Collection_Abstract extends Varien_Da
              * @var string $query
              */
             $query       = $this->_prepareSelect($this->getSelect());
-            $this->_data = $this->_fetchAll($query, $this->_bindParams);
+            $this->_data = $this->_fetchAll($query);
             $this->_afterLoadData();
         }
         return $this->_data;
