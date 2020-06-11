@@ -486,7 +486,8 @@ class Varien_Io_File extends Varien_Io_Abstract
      */
     protected function _IsValidSource($src)
     {
-        if (is_string($src) || is_resource($src)) {
+        //Treat string that contains a null byte as invalid
+        if ((is_string($src) && strpos($src, chr(0)) === false) || is_resource($src)) {
             return true;
         }
 
@@ -505,7 +506,7 @@ class Varien_Io_File extends Varien_Io_Abstract
     {
         $error = false;
         @chdir($this->_cwd);
-         if (file_exists($filename)) {
+        if (file_exists($filename)) {
             if (!is_writeable($filename)) {
                 $error = "File '{$this->getFilteredPath($filename)}' isn't writeable";
             }
@@ -532,7 +533,7 @@ class Varien_Io_File extends Varien_Io_Abstract
     protected function _checkSrcIsFile($src)
     {
         $result = false;
-        if (is_string($src) && @is_readable($src) && is_file($src)) {
+        if (is_string($src) && is_readable($src) && is_file($src)) {
             $result = true;
         }
 
@@ -845,7 +846,7 @@ class Varien_Io_File extends Varien_Io_Abstract
     {
         return $this->getCleanPath(dirname($file));
     }
-    
+
     public function getStreamHandler()
     {
         return $this->_streamHandler;
