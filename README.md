@@ -25,6 +25,12 @@ PHP 7 support was added as of version 1.9.2.3. based on the Inchoo article and [
 There are some new or changed tranlations, if you want add them to your locale pack please check:
 - `app/locale/en_US/*_LTS.csv`
 
+## Removed Modules
+
+- Phoenix_Moneybookers
+
+    Re-install: `$ composer require openmage-module-fostering/phoenix_moneybookers`
+
 ## License
 [OSL v3.0](http://opensource.org/licenses/OSL-3.0)
 
