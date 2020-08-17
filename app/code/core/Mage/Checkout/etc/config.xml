@@ -237,6 +237,11 @@
         </translate>
     </adminhtml>
     <default>
+        <admin>
+            <security>
+                <validate_formkey_checkout>1</validate_formkey_checkout>
+            </security>
+        </admin>
         <checkout>
             <options>
                 <onepage_checkout_enabled>1</onepage_checkout_enabled>
